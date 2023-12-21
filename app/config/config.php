@@ -12,3 +12,4 @@ define ('URLROOT', 'http://localhost/shareposts');
 define ('SITENAME', 'SharePosts');
 define ('HEADER', APPROOT . '/views/inc/header.php');
 define ('FOOTER', APPROOT . '/views/inc/footer.php');
+define('APPVERSION', '1.0.0');
