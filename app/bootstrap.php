@@ -1,6 +1,8 @@
 <?php
 //Load config
 require_once 'config/config.php';
+//Load Helpers Functions
+require_once 'helpers/url_helper.php';
 
 //Autoloader
 function my_autoloader($class_name) {
