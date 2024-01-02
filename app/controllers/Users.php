@@ -26,7 +26,7 @@
 
         // Validate Email
         if(empty($data['email'])){
-          $data['email_err'] = 'Pleae enter email';
+          $data['email_err'] = 'Please enter email';
         } else {
           // Check email
           if($this->userModel->findUserByEmail($data['email'])){
@@ -36,19 +36,19 @@
 
         // Validate Name
         if(empty($data['name'])){
-          $data['name_err'] = 'Pleae enter name';
+          $data['name_err'] = 'Please enter name';
         }
 
         // Validate Password
         if(empty($data['password'])){
-          $data['password_err'] = 'Pleae enter password';
+          $data['password_err'] = 'Please enter password';
         } elseif(strlen($data['password']) < 6){
           $data['password_err'] = 'Password must be at least 6 characters';
         }
 
         // Validate Confirm Password
         if(empty($data['confirm_password'])){
-          $data['confirm_password_err'] = 'Pleae confirm password';
+          $data['confirm_password_err'] = 'Please confirm password';
         } else {
           if($data['password'] != $data['confirm_password']){
             $data['confirm_password_err'] = 'Passwords do not match';
@@ -164,7 +164,7 @@
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
       $_SESSION['user_name'] = $user->name;
-      redirect('pages/index');
+      redirect('posts');
     }
 
     public function logout(){
@@ -173,13 +173,5 @@
       unset($_SESSION['user_name']);
       session_destroy();
       redirect('users/login');
-    }
-
-    public function isLoggedIn(){
-      if(isset($_SESSION['user_id'])){
-        return true;
-      } else {
-        return false;
-      }
     }
   }
